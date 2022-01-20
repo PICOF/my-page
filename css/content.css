@@ -1,0 +1,176 @@
+.content{
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 0;
+    overflow: hidden;
+}
+div.tools{
+    padding-top: 60px;
+    user-select: none;
+}
+div.pages{
+    position: relative;
+    float: left;
+    height: 500px;
+    width: 48%;
+    min-width: 580px;
+    margin-bottom: 230px;
+}
+div.todolist{
+    float: left;
+    height: fit-content;
+    width: 48%;
+    min-width: 510px;
+    margin-left: 30px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.76);
+    box-shadow:  0 10px 20px 0 #757575b9;
+}
+div.putin{
+    width: 80%;
+    margin-left: 12%;
+}
+div.putin input{
+    position: relative;
+    bottom: 10px;
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    font-family: 仿宋;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: inset 0 2px 3px 2px #757575b9;
+    transition: all 0.3s ease;
+}
+div.putin input:hover{
+    width: 44%;
+    height: 36px;
+    box-shadow: inset 0 4px 6px 3px #757575b9;
+}
+div.putin input:focus{
+    background-color: #ffffff;
+    box-shadow: none;
+    width: 46%;
+    height: 38px;
+}
+input#task{
+    float: left;
+    margin-left: 5%;
+    padding-left: 4%;
+}
+input#time{
+    width: 40%;
+    float: right;
+    margin-right: 5%;
+}
+div.todolist table{
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: inset 0 2px 2px 0 #757575b9;
+}
+div.todolist table caption{
+    padding: 5px;
+    margin: 10px auto;
+    font-family: 方正锐正黑简体_纤;
+    font-size: 24px;
+}
+div.todo_box{
+    margin: 10% auto;
+    height: fit-content;
+    width: 90%;
+    position: relative;
+}
+div.todo_box img{
+    zoom: 5%;
+    position: absolute;
+    top: -5%;
+    transition: all 0.3s ease;
+}
+div.todo_box img:hover{
+    transform: scale(1.2,1.2);
+}
+div.todo_box td{
+    border-radius: 20px;
+    width: 30%;
+    padding: 10px;
+    font-family: Century Gothic,幼圆;
+    color: white;
+}
+div.todo_box tr{
+    transition: all 0.3s ease;
+}
+div.todo_box tr:hover{
+    font-size: large;
+    font-weight: 900;
+    transform: scale(1.04,1.1);
+}
+table.list tr:first-child:hover{
+    font-size: unset;
+    font-weight:normal;
+    transform: scale(1,1);
+}
+table.list tr:first-child td{
+    font-family: 方正锐正黑简体_纤;
+    background-color: rgb(156, 167, 172);
+    font-size: larger;
+    /* font-weight: bold; */
+}
+.todo td{
+    background-color: rgb(113, 207, 219);
+}
+.done td{
+    background-color: rgb(145, 201, 139);
+}
+tr.obj td:last-child{
+    padding: 0px;
+    background-color: transparent;
+}
+div.todolist button.add{
+    float: none;
+    margin: 20px 0;
+    margin-left: 20%;
+    width: 60%;
+    border-radius: 12px;
+    font-family: 幼圆;
+    color: rgb(132, 133, 139);
+    font-size: larger;
+    line-height: 16px;
+}
+div.todolist button.add:hover{
+    margin-left: 17%;
+    width:66%;
+}
+div.todolist button.add:active{
+    background-color: rgb(120, 173, 243);
+}
+div.todolist button{
+    float: right;
+    height: 40px;
+    width: fit-content;
+    min-width: 50px;
+    background-color: rgba(226, 213, 213, 0.945);
+    border-radius: 8px;
+    border: none;
+    padding: 12px 5px;
+    transition: all 0.3s ease;
+}
+div.todolist table button{
+    background-image: url(../image/delete.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div.todolist button:hover{
+    background-color: rgb(156, 167, 172);
+    background-size: 50%;
+    font-size: 22px;
+    color: white;
+    box-shadow:  0 10px 20px 0 #757575b9;
+}
+div.todolist button:active{
+    background-color: rgb(243, 115, 98);
+}

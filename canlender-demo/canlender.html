@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+        div.can{
+            background-color: beige;
+            height: fit-content;
+            width: 46%;
+            min-width: 580px;
+            margin: 0 auto;
+            padding-bottom: 2%;
+            border-radius: 30px;
+            user-select: none;
+        }
+        div.control{
+            position: relative;
+            height: fit-content;
+            padding: 5%;
+            padding-top: 2%;
+        }
+        div.control input{
+            font-family: Impact;
+            color: rgb(168, 164, 164);
+            font-size: larger;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+        div.control button{
+            position: relative;
+            top: 7px;
+            background-color: transparent;
+            border: none;
+            color: #979696;
+            transition: all 0.3s ease;
+        }
+        div.control button:hover{
+            color: rgb(211, 208, 208);
+            transform: scale(1.1,1.1);
+        }
+        div.control button:active{
+            color: #979696;
+            transform: scale(0.9,0.9);
+        }
+        div.table{
+            height: fit-content;
+            width: 100%;
+            padding-left: 2%;
+            position: relative;
+        }
+        div.table div{
+            position: relative;
+            display: inline-block;
+            width: 11%;
+            height: fit-content;
+            line-height: 50px;
+            text-align: center;
+            font-family: Bahnschrift Light, 幼圆;
+            font-size: large;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.829);
+            margin: 1%;
+            box-shadow:  0 5px 8px 0 #757575b9;
+            transition: all 0.3s ease;
+        }
+        div.table div:hover{
+            z-index: 100;
+            transform: scale(1.3,1.3);
+        }
+        div.table:nth-child(2) div:hover{
+            transform: scale(1,1);
+        }
+    </style>
+</head>
+<body>
+    <div class="can">
+        <div class="control">
+            <button class="premon material-icons" onclick="pre_mon()">arrow_back_ios</button>
+            <input type="date">
+            <button class="nextmon material-icons" onclick="next_mon()">arrow_forward_ios</button>
+        </div>
+        <div class="wdow table">
+            <div>星期一</div>
+            <div>星期二</div>
+            <div>星期三</div>
+            <div>星期四</div>
+            <div>星期五</div>
+            <div>星期六</div>
+            <div>星期日</div>
+        </div>
+        <div class="week table">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="week table">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="week table">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="week table">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="week table">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="week table">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script>
+        var date=new Date();
+        var dtshow=document.querySelector('div.control input');
+        var dayblock=document.querySelectorAll('div.week div');
+        var mon=date.getMonth()+1;
+        var day=date.getDate();
+        for(let i=0;i<dayblock.length;i++){
+            dayblock[i].onclick=function(){
+                var y=this.innerHTML
+                if(y.toString().length<2){
+                    y='0'+y;
+                }
+                dtshow.value=dtshow.value.slice(0,-2)+y
+                refresh();
+            }
+        }
+        if(mon.toString().length<2){
+            mon="0"+mon;
+        }
+        if(day.toString().length<2){
+            day="0"+day;
+        }
+        //console.log(mon);
+        dtshow.value=date.getFullYear()+"-"+mon+"-"+day;
+        function refresh(){
+            var ndate=dtshow.value;
+            //console.log(ndate);
+            var ny=ndate.slice(0,4);
+            var nm=ndate.slice(5,7);
+            var nd=ndate.slice(8,10);
+            if(nm.indexOf('0')==0){
+                nm=nm.substring(1);
+            }
+            if(nd.indexOf('0')==0){
+                nd=nd.substring(1);
+            }
+            //console.log(ny+' '+nm+' '+nd);
+            var ntime= new Date(ny,nm-1,1);
+            var dlen= (new Date(ny,nm,0)).getDate();
+            var index=ntime.getDay();
+            //console.log(dlen);
+            if(index==0){
+                index=7;
+            }//注意星期日对应的数字是0，坑死我了
+            for(var i=0;i<dayblock.length;i++){
+                if(i<dlen+index-1&&i>=index-1){
+                    dayblock[i].innerHTML=i-index+2;
+                    if(i-index+2==nd){
+                        dayblock[i].style.backgroundColor='rgba(243, 115, 65, 0.726)';
+                    }else{
+                        if(((i+1)%7==0)){
+                            dayblock[i].style.backgroundColor='rgba(65, 193, 243, 0.726)';
+                        }else{
+                            dayblock[i].style.backgroundColor='rgba(255, 255, 255, 0.829)';
+                        }
+                    }
+                }else{
+                    dayblock[i].innerHTML=null;
+                }
+            }
+        }
+        function pre_mon(){
+            var x=dtshow.value;
+            var mm=x.substring(5,7);
+            var dd=x.substring(8,10);
+            if(mm.indexOf('0')==0){
+                mm=mm.substring(1);
+            }
+            mm=parseInt(mm)-1;
+            if(mm==0){
+                mm=12
+            }
+            var dlen=(new Date(x.slice(0,4),mm,0)).getDate();
+            if(mm.toString().length<2){
+                mm="0"+mm;
+            }
+            if(parseInt(dd)>dlen){
+                dd=dlen;
+            }
+            dtshow.value=x.slice(0,5)+mm+"-"+dd;
+            refresh();
+        }
+        function next_mon(){
+            var x=dtshow.value;
+            var mm=x.substring(5,7);
+            var dd=x.substring(8,10);
+            if(mm.indexOf('0')==0){
+                mm=mm.substring(1);
+            }
+            mm=parseInt(mm)+1;
+            if(mm==13){
+                mm=1
+            }
+            var dlen=(new Date(x.slice(0,4),mm,0)).getDate();
+            if(mm.toString().length<2){
+                mm="0"+mm;
+            }
+            if(parseInt(dd)>dlen){
+                dd=dlen;
+            }
+            dtshow.value=x.slice(0,5)+mm+"-"+dd;
+            refresh();
+        }
+        refresh();
+        dtshow.onchange=function(){
+            refresh();
+        }
+        // refresh();
+        // setInterval('refresh()',1000);//使用onchange规避循环检测
+    </script>
+</body>
+</html>

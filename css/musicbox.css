@@ -1,0 +1,64 @@
+div.music_box{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    min-width: 580px;
+    height: 100%;
+    margin: auto;
+    z-index: 100;
+}
+
+div.music {
+    height: 442px;
+    width: 100%;
+    min-width: 580px;
+    margin: 0 auto;
+    padding-bottom: 2%;
+    border-radius: 30px;
+    user-select: none;
+    /* 另有背景图disc1可供替换 */
+    background-color: white;
+    background-image: url(../image/disc2.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 138%;
+    background-size: 100%;
+    box-shadow: 0 10px 20px 0 #757575b9;
+    overflow: hidden;
+    display: none;
+}
+
+#changeM {
+    position: absolute;
+    background-color: white;
+    border: none;
+    height: 40px;
+    width: 80px;
+    top: -40px;
+    left: 90px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 方正姚体;
+    font-size: medium;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+#changeM:hover {
+    color: rgb(94, 94, 94);
+    font-size: larger;
+}
+
+#changeM:active {
+    color: black;
+    font-size: unset;
+}
+
+div.music iframe {
+    margin-left: -1.8%;
+    margin-top: -1.8%;
+    width: 104%;
+    height: 107%;
+}

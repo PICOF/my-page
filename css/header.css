@@ -1,0 +1,156 @@
+.header{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    padding-top: 20px;
+    z-index: 10000;
+    transition: all 0.3s ease;
+}
+.header:hover{
+    top: 0px;
+}
+.header-l{
+    position: absolute;
+    width: 64%;
+    left: 10%;
+    background-color: rgba(178, 182, 189, 0.795);
+    border-radius: 20px;
+    box-shadow:  0 10px 20px 0 #757575b9;
+    user-select: none;
+}
+.header-r{
+    position: absolute;
+    left: 76%;
+    width: 14%;
+    height: 100px;
+    background-color: rgba(178, 182, 189, 0.795);
+    border-radius: 20px;
+    box-shadow:  0 10px 20px 0 #757575b9;
+    overflow: hidden;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+.header-r:hover{
+    height: 180px;
+    background-color: rgba(145, 150, 158, 0.89);
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+.icon{
+    float: left;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 1px;
+    left: 1%;
+    clip-path: circle(44px);
+    text-indent: -1000px;
+    background-image: url(http://q2.qlogo.cn/headimg_dl?dst_uin=1821525505&spec=5);
+    /* ../image/icon.jpg,这个是备用图 */
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+.icon:hover{
+    clip-path: circle(50px);
+}
+.nav{
+    float: left;
+    margin: auto 2%;
+    margin-right: 16%;
+}
+.nav ul{
+    margin: 0 auto;
+}
+.nav li{
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    width: 120px;
+    line-height: 100px;
+    font-size: 24px;
+    font-family: 方正锐正黑简体_纤;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.nav li.main{
+    background-color: rgba(145, 150, 158, 0.89);
+}
+.nav li:hover{
+    font-size: 30px;
+    background-color: rgba(145, 150, 158, 0.89);
+    transition: all 0.3s ease;
+}
+.lxfs_box{
+    float: left;
+    position: absolute;
+    top:30px;
+    right: 7%;
+}
+.lxfs{
+    cursor: pointer;
+    height: 37px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: aliceblue;
+    overflow: hidden;
+    filter: blur(0.4px);
+    transition: all 0.3s ease;
+}
+.lxfs:hover{
+    height: 121px;
+    transition: all 0.3s ease;
+}
+.lxfs ul{
+    padding: 0;
+    margin:0;
+}
+.lxfs li{
+    font-size: 20px;
+    text-align: center;
+    list-style: none;
+    padding: 8px;
+    border-bottom: 2px solid rgba(53, 53, 53, 0.356);
+    transition: all 0.3s ease;
+    font-family: 幼圆;
+}
+.lxfs .link:hover{
+    background-color: rgb(158, 162, 165);
+    transition: background-color 0.3s ease;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+.header-r .tad .time{
+    padding-top: 10px;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    font-family: UniDreamLED;
+    font-size: 50px;
+    color:aliceblue;
+}
+.header-r .tad .apm{
+    font-family: 方正锐正黑简体_纤;
+    position: relative;
+    top: 14px;
+    left: 14px;
+    filter: blur(0.6px);
+}
+.header-r .tad .date{
+    position: relative;
+    top:12px;
+    text-align: center;
+    font-family: Arial;
+    font-size: larger;
+    font-weight: 700;
+    color: rgb(67, 70, 73);
+}
+.header-r .tad .weather{
+    transform: scale(0.7,0.7);
+    margin-left: -54px;
+    margin-top: 10px;
+}

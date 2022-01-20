@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/show.css">
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/canlender.css">
+    <link rel="stylesheet" href="./css/musicbox.css">
+    <title>PICOF's page</title>
+    <style>
+        @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+        body {
+            padding-top: 160px;
+            background-image: url(./image/background-6.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .search {
+            height: 400px;
+            width: 87%;
+            margin: 0 auto;
+            border-radius: 40px;
+            background-color: rgba(238, 235, 235, 0.699);
+            text-align: center;
+            font-size: xx-large;
+            line-height: 400px;
+        }
+
+        div.footer {
+            position: relative;
+            bottom: 40px;
+            height: 80px;
+            width: 82%;
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 20px;
+            background-color: rgba(178, 182, 189, 0.795);
+            box-shadow: 0 10px 20px 0 #757575b9;
+            transition: all 0.3s ease;
+        }
+
+        div.footer:hover {
+            width: 84%;
+            bottom: 60px;
+            background-color: rgba(178, 182, 189, 0.952);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" id="hd">
+        <div class="header-l">
+            <div class="icon">
+                <a href="#">PICOF的小页面，欢迎关注交流~</a>
+            </div>
+            <div class="nav">
+                <ul class="pic">
+                    <li class="main">主页</li>
+                    <li>个人简介</li>
+                    <li><a href="https://master-beast.gitee.io/" target="_blank">我的博客</a></li>
+                    <li>项目清单</li>
+                    <li>技能树</li>
+                </ul>
+            </div>
+            <div class="lxfs_box">
+                <div class="lxfs">
+                    <ul>
+                        <li>联系我</li>
+                        <li class="link"><a href="https://github.com/PICOF" target="_blank"><img
+                                    src="./image/github.svg" alt="" style="zoom: 65%;position: relative;top:8px;">
+                                github</a></li>
+                        <li class="link"><a href="https://gitee.com/master-beast" target="_blank"><img
+                                    src="./image/gitee.ico" alt="" style="zoom: 31%;position: relative;top:15px;">
+                                gitee</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-r">
+            <div class="tad">
+                <div class="apm"></div>
+                <div class="time"></div>
+                <div class="date"></div>
+                <iframe width="415" scrolling="no" height="50" frameborder="0" allowtransparency="true"
+                    src="https://i.tianqi.com?c=code&id=12&icon=1&num=2&site=12" class="weather"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="slide-box">
+            <div class="banner-box"></div>
+            <button class="slide-left-btn material-icons">arrow_back_ios</button>
+            <!--这里的arrow_back_ios会被识别为前箭头图标-->
+            <button class="slide-right-btn material-icons">arrow_forward_ios</button>
+            <div class="pagination-box"></div>
+        </div>
+        <div class="tools">
+            <div class="pages">
+                <div class="display">
+                    <div class="can">
+                        <button id="changeC" onclick="changeC()">日程表</button>
+                        <div class="control">
+                            <button class="premon material-icons" onclick="pre_mon()">arrow_back_ios</button>
+                            <input type="date">
+                            <button class="nextmon material-icons" onclick="next_mon()">arrow_forward_ios</button>
+                        </div>
+                        <div class="wdow table">
+                            <div>星期一</div>
+                            <div>星期二</div>
+                            <div>星期三</div>
+                            <div>星期四</div>
+                            <div>星期五</div>
+                            <div>星期六</div>
+                            <div>星期日</div>
+                        </div>
+                        <div id="Cbody"></div>
+                    </div>
+                    <div class="music_box">
+                        <button id="changeM" onclick="changeM()">最近在听</button>
+                        <div class="music">
+                            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0"
+                                src="//music.163.com/outchain/player?type=0&id=4937935280&auto=1&height=430"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div id="notice">
+                    <div class="tips"></div>
+                    <!-- <div class="s">可以摸鱼了好耶</div> -->
+                </div>
+            </div>
+            <div class="todolist">
+                <div class="todo_box">
+                    <img src="./image/todo.png" alt="">
+                    <div class="putin"><input id="task" type="text"> <input id="time" type="date"></div>
+                    <div><button class="add">添加新事项</button></div>
+                    <table class="todo list" cellspacing="10px" cellpadding="10px">
+                        <caption>计划表</caption>
+                        <tr>
+                            <td>事件名</td>
+                            <td>立项时间</td>
+                            <td>DDL</td>
+                        </tr>
+                        <tr draggable="true" class="obj">
+                            <td>乐</td>
+                            <td>乐死了</td>
+                            <td>昨天</td>
+                            <td><button></button></td>
+                        </tr>
+                    </table>
+                    <table class="done list" cellspacing="10px" cellpadding="10px">
+                        <caption>已完成</caption>
+                        <tr>
+                            <td>事件名</td>
+                            <td>立项时间</td>
+                            <td>DDL</td>
+                        </tr>
+                        <tr draggable="true" class="obj">
+                            <td>悲</td>
+                            <td>无尽的悲</td>
+                            <td>昨天</td>
+                            <td><button></button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search">
+        施工中。。。
+    </div>
+    <div class="footer">
+        <div class="copyright">
+            © 
+            <span class="copyrightyear">2022</span>
+            <span class="author">PICOF</span>
+        </div>
+    </div>
+    <script src="./js/header.js"></script>
+    <script src="./js/time.js"></script>
+    <script src="./js/show.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/canlender.js"></script>
+    <script src="./js/switch.js"></script>
+</body>
+
+</html>
