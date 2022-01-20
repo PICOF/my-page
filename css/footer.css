@@ -1,0 +1,74 @@
+div.footer {
+    user-select: none;
+    position: relative;
+    bottom: 40px;
+    height: 80px;
+    width: 82%;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color: rgba(178, 182, 189, 0.795);
+    box-shadow: 0 10px 20px 0 #757575b9;
+    transition: all 0.3s ease;
+}
+
+div.footer:hover {
+    width: 84%;
+    bottom: 60px;
+    background-color: rgba(178, 182, 189, 0.952);
+}
+
+div.footer .copyright{
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 22px;
+}
+
+div.footer img{
+    zoom: 5%;
+    position: relative;
+    top: 100px;
+}
+
+div.footer span{
+    font-family: Century Gothic;
+    font-size: larger;
+}
+
+div.footer .info{
+    position: relative;
+    bottom: 26px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+div.footer .info a{
+    position: relative;
+    bottom: 0;
+    font-family: Century Gothic,幼圆;
+    transition: all 0.3s ease;
+}
+
+div.footer .info a:hover{
+    bottom: 6px;
+    transform: scale(1.2,1.2);
+}  
+
+div.footer .info .qq{
+    float: left;
+}
+
+div.footer .info .email{
+    float: right;
+}
+
+#Q{
+    position: relative;
+    zoom: 2.5%;
+    top:290px;
+}
+
+#E{
+    position: relative;
+    top: 140px;
+}

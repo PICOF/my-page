@@ -92,7 +92,6 @@ function cloneC(){
     //这一句不能少，因为上一轮复制已经将旧的el替换后扔掉了
     el = document.getElementById('Cbody');
     elClone = el.cloneNode(true);
-    console.log(el.parentNode);
     el.parentNode.replaceChild(elClone, el);
     dayblock=document.querySelectorAll('div.week div');
     for(var i=0;i<dayblock.length;i++){
