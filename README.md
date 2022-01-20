@@ -9,3 +9,7 @@
 [PICOF&#39;s blog](https://picof.github.io/)
 
 不过老实说，能把一个项目从头到尾写完感觉针不戳（虽然并没有完全写完）
+
+成品效果在这：
+
+[PICOF&#39;s page](https://picof.github.io/my-page/main.html)
