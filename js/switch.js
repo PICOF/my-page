@@ -1,8 +1,10 @@
 var can=document.querySelector('div.can');
 var musicbox=document.querySelector('div.music_box');
 var music=document.querySelector('div.music');
-var table=document.querySelectorAll('div.table');
+//table 在之前refresh中可能被刷新，只能动态获取
+var table=null;
 function changeM(){
+    table=document.querySelectorAll('div.table');
     can.style.zIndex=100;
     musicbox.style.zIndex=200;
     music.style.display='block';
@@ -16,6 +18,7 @@ function changeM(){
     notice.style.backgroundImage='url(./image/decoration.jpeg)';
 }
 function changeC(){
+    table=document.querySelectorAll('div.table');
     can.style.zIndex=200;
     musicbox.style.zIndex=100;
     music.style.display='none';
