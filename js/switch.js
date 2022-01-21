@@ -11,7 +11,7 @@ function changeM(){
     }
     can.style.marginBottom='400px';
     notice.style.height='180px';
-    notice.firstElementChild.innerHTML=null;
+    notice.firstElementChild.style.display='none';
     // css 的路径以文件所在为基准，js 以执行脚本的文件所在为基准?但是这里是改的css文件啊，怪
     notice.style.backgroundImage='url(./image/decoration.jpeg)';
 }
@@ -25,5 +25,6 @@ function changeC(){
     can.style.marginBottom=0;
     notice.style.height='120px';
     notice.style.backgroundImage='none';
+    notice.firstElementChild.style.display='block';
     refresh();
 }
