@@ -55,6 +55,8 @@
             this.parentNode.parentNode.remove();
             localStorage.setItem('todo',t1.innerHTML);
             localStorage.setItem('done',t2.innerHTML);
+            prem=0;
+            refresh();
         }
         td4.appendChild(btn4);
         tr.appendChild(td1);
